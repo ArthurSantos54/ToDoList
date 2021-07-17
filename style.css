@@ -1,0 +1,180 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: gray;
+    background: linear-gradient(193deg,#2A88AD,rgb(128, 128, 128) 90%);
+}
+.container{
+    box-shadow: 0px 1px 10px 1px #000;
+    height:600px;
+    border-radius: 6px;
+    position: relative;
+    max-width: 1000px;
+    padding: 10px;
+    margin: 0 auto;
+    top: 100px;
+}
+.addTask{
+    width: 100%;
+    display: flex;
+    padding: 10px 0;
+}
+.addTask > input[type ="text"]{
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.76);
+    background: none;
+    padding: 10px;
+    font-size: 22px;
+    outline: none;
+}
+::-webkit-input-placeholder{
+    color: rgba(255, 255, 255, 0.76);
+}
+.addTask button{
+    margin: 0 10px;
+    background: rgba(0, 0, 0, 0.89);
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 5px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:1s;
+}
+.addTask button:hover{
+    background: transparent;
+    color: black;
+    border: 2px solid black;
+}
+.notCompleted, .Completed{
+    margin: 5px 0;
+    padding: 20px;
+}
+h3{
+    font-size: 28px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+}
+ol{
+    list-style: none;
+    counter-reset: my-counter;
+}
+ol li{
+    width: 100%;
+    padding: 18px;
+    margin: 5px 0;
+    background: rgba(255, 0, 0, 0.712);
+    font-size: 22px;
+    counter-increment: my-counter;
+}
+ol.Completed li{
+    background: #00ff62;
+}
+ol li::before{
+    content: counter(my-counter);
+    background: rgb(0, 0, 0);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display:inline-block;
+    line-height: 2rem;
+    text-align: center;
+    color: #fff;
+    margin-right: 0.5rem;
+}
+li button{
+    float: right;
+    padding: 5px;
+    font-size: 28px;
+    line-height: 28px;
+    margin-right: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    animation: hover 2s;
+}
+@keyframes hover {
+    from {
+      transform: translateX(40px);
+      color: white;
+    }
+    to {
+      transform: translateX(0);
+    }
+  } 
+@media only screen and (max-width: 990px) {
+    body{
+        background:#fff;
+    }
+    .addTask{
+        width: 100%;
+    }
+    .container{
+        box-shadow: 0px 0px 0px 0px;
+    }
+    .addTask > input[type ="text"]{
+        width: 100%;
+        font-size: 50px;
+    }
+    .upper-container{
+        height: 160px;
+        width: 985px;
+        background:#00fa9a98;
+        background: linear-gradient(193deg,#00fa9a98,rgb(128, 128, 128) 250%);
+        border-radius: 30px;
+        position: absolute;
+        transform: translate(-0%,-62%);
+        top: 0%;
+        left: 0%;
+    }
+    h3{
+        font-size: 70px;
+        color: black;
+    }
+    ::-webkit-input-placeholder{
+        color: #fff;
+        font-size: 65px;
+    }
+    .addTask button{
+        font-size: 25px;
+        padding: 30px;
+        border-radius: 30px;
+    }
+    .notCompleted, .Completed{
+        margin: 100px 0;
+        padding: 100px;
+    }
+    ol li{
+        width:900px;
+        transform: translate(-8%,-0%);
+        padding: 30px;
+        margin: 5px 0;
+        background: rgba(255, 0, 0, 0.712);
+        font-size: 40px;
+        counter-increment: my-counter;
+    }
+    ol li::before{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        line-height: 3rem;
+        margin-right: 1rem;
+    }
+    li button{
+        font-size: 50px;
+        
+    }
+    ol li{
+        border-radius: 15px;
+    } 
+}
